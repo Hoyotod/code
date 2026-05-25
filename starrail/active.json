@@ -1,0 +1,116 @@
+[
+    {
+        "code": "OMEGA",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Stellar Jade×60",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/d/d9/Item_Stellar_Jade.png"
+            },
+            {
+                "name": "Fuel×1",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/83/Item_Fuel.png"
+            }
+        ],
+        "duration": {
+            "discovered": null,
+            "valid": "(indefinite)",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "CREATIONNYMPH",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Stellar Jade×60",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/d/d9/Item_Stellar_Jade.png"
+            },
+            {
+                "name": "Fuel×1",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/83/Item_Fuel.png"
+            },
+            {
+                "name": "Heroic Variable×1",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/3/3f/Item_Heroic_Variable.png"
+            }
+        ],
+        "duration": {
+            "discovered": null,
+            "valid": "(indefinite)",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "FAREWELL",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Stellar Jade×60",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/d/d9/Item_Stellar_Jade.png"
+            },
+            {
+                "name": "Fuel×1",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/83/Item_Fuel.png"
+            }
+        ],
+        "duration": {
+            "discovered": null,
+            "valid": "(indefinite)",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "IFYOUAREREADINGTHIS",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Stellar Jade×60",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/d/d9/Item_Stellar_Jade.png"
+            },
+            {
+                "name": "Fuel×1",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/83/Item_Fuel.png"
+            }
+        ],
+        "duration": {
+            "discovered": null,
+            "valid": "(indefinite)",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "STARRAILGIFT",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Stellar Jade×50",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/d/d9/Item_Stellar_Jade.png"
+            },
+            {
+                "name": "Credit×10000",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/d/d9/Item_Credit.png"
+            }
+        ],
+        "duration": {
+            "discovered": null,
+            "valid": "(indefinite)",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    }
+]
