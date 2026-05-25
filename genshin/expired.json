@@ -1,5 +1,27 @@
 [
     {
+        "code": "GENSHINGIFT",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "expired",
+        "rewards": [
+            {
+                "name": "Primogem×50",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Hero's Wit×3",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/26/Item_Hero%27s_Wit.png"
+            }
+        ],
+        "duration": {
+            "discovered": "November 10, 2020",
+            "valid": null,
+            "expired": "May 20, 2026",
+            "notes": "Found in ads located on YouTube and similar. Code hit max usage as of August 5, 2021; but started working again as early as of August 11, 2021. Hit max usage again as of May 20, 2026."
+        },
+        "link": null
+    },
+    {
         "code": "FEOMBCVX6UO7",
         "server": "America, Europe, Asia, TW/HK/Macao",
         "status": "expired",
