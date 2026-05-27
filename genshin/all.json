@@ -1,5 +1,171 @@
 [
     {
+        "code": "NMI20MAJGIBP",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Primogem×20",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Geode of Replication×160",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a9/Item_Geode_of_Replication.png"
+            }
+        ],
+        "duration": {
+            "discovered": "May 24, 2026",
+            "valid": null,
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "OHOHONICOLE",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Primogem×30",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Mora×20,000",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/84/Item_Mora.png"
+            },
+            {
+                "name": "Tattered Warrant×3",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/89/Item_Tattered_Warrant.png"
+            }
+        ],
+        "duration": {
+            "discovered": "May 18, 2026",
+            "valid": "May 27, 2026",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "MAGENICOLESPUZZLE",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Primogem×30",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Midsommar Torte×1",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/09/Item_Midsommar_Torte.png"
+            },
+            {
+                "name": "Fruit Tandem Turnovers×1",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/e5/Item_Fruit_Tandem_Turnovers.png"
+            },
+            {
+                "name": "Chenyu Adeptea×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/0c/Item_Chenyu_Adeptea.png"
+            }
+        ],
+        "duration": {
+            "discovered": "May 15, 2026",
+            "valid": "July 1, 2026",
+            "expired": null,
+            "notes": "From HoyoLab article . Unique in-game mail: A Little Surprise from Nicole"
+        },
+        "link": null
+    },
+    {
+        "code": "PFY1S40I88T9",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Primogem×60",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Adventurer's Experience×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/07/Item_Adventurer%27s_Experience.png"
+            }
+        ],
+        "duration": {
+            "discovered": "May 8, 2026",
+            "valid": null,
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "PSCA8NL4ZSPD",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Primogem×60",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Adventurer's Experience×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/07/Item_Adventurer%27s_Experience.png"
+            }
+        ],
+        "duration": {
+            "discovered": "March 30, 2026",
+            "valid": null,
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "G5HS7EMI47D0",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Primogem×60",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Adventurer's Experience×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/07/Item_Adventurer%27s_Experience.png"
+            }
+        ],
+        "duration": {
+            "discovered": "March 30, 2026",
+            "valid": null,
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "YUANSHEN",
+        "server": "China",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Primogem×50",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Hero's Wit×3",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/26/Item_Hero%27s_Wit.png"
+            }
+        ],
+        "duration": {
+            "discovered": "November 10, 2020",
+            "valid": "(indefinite)",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
         "code": "GENSHINGIFT",
         "server": "America, Europe, Asia, TW/HK/Macao",
         "status": "expired",
