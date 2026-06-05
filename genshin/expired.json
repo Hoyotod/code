@@ -1,5 +1,31 @@
 [
     {
+        "code": "OHOHONICOLE",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "expired",
+        "rewards": [
+            {
+                "name": "Primogem×30",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Mora×20,000",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/84/Item_Mora.png"
+            },
+            {
+                "name": "Tattered Warrant×3",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/89/Item_Tattered_Warrant.png"
+            }
+        ],
+        "duration": {
+            "discovered": "May 18, 2026",
+            "valid": null,
+            "expired": "May 27, 2026",
+            "notes": null
+        },
+        "link": null
+    },
+    {
         "code": "GENSHINGIFT",
         "server": "America, Europe, Asia, TW/HK/Macao",
         "status": "expired",
