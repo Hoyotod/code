@@ -220,7 +220,6 @@ class ScraperBase(ABC):
             rewards_text = "\n".join(f"- {r.name}" for r in rewards)
         else:
             rewards_text = "-"
-        discovered = code.duration.discovered or "-"
 
         color_active = 0x2ECC71
         color_expired = 0x95A5A6
@@ -228,16 +227,13 @@ class ScraperBase(ABC):
 
         embed = {
             "author": {"name": self.game_name},
-            "title": f"```{code.code}```",
+            "title": f"{code.code}",
             "description": f"**Server:** {code.server}\n**Link:** {code.link}\n",
-            "url": code.link or None,
             "color": embed_color,
             "fields": [
                 {"name": "Rewards", "value": rewards_text, "inline": False},
-                {"name": "Discovered", "value": discovered, "inline": True},
-                {"name": "Valid Until", "value": code.duration.valid or "-", "inline": True},
             ],
-            "images": [{"url": f"/assets/{self.game_folder}.jpg"}],
+            "image": {"url": f"https://raw.githubusercontent.com/Hoyotod/code/main/assets/{self.game_folder}.jpg"},
             "footer": {"text": "Hoyo Code"},
             "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S.000Z", time.gmtime()),
         }
