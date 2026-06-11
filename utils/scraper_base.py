@@ -215,22 +215,31 @@ class ScraperBase(ABC):
             self.log("Tidak ada `DISCORD_WEBHOOK_URL` dikonfigurasi; melewatkan pengiriman webhook.", style="dim yellow")
             return
 
-        rewards_text = ", ".join(r.name for r in (code.rewards or [])) if getattr(code, "rewards", None) else "-"
-        discovered = code.duration.discovered or code.duration.valid or "-"
+        rewards = getattr(code, "rewards", None) or []
+        if rewards:
+            rewards_text = "\n".join(f"- {r.name}" for r in rewards)
+        else:
+            rewards_text = "-"
+        discovered = code.duration.discovered or "-"
 
         color_active = 0x2ECC71
         color_expired = 0x95A5A6
         embed_color = color_active if code.status == "active" else color_expired
 
         embed = {
-            "title": f"New code for {self.game_name}: {code.code}",
-            "description": f"**Server:** {code.server}\n**Status:** {code.status}\n**Rewards:** {rewards_text}",
+            "author": {"name": self.game_name},
+            "title": f"```{code.code}```",
+            "description": f"**Server:** {code.server}\n**Link:** {code.link}\n",
             "url": code.link or None,
             "color": embed_color,
-            "timestamp": None,
             "fields": [
-                {"name": "Discovered / Valid", "value": discovered, "inline": True},
+                {"name": "Rewards", "value": rewards_text, "inline": False},
+                {"name": "Discovered", "value": discovered, "inline": True},
+                {"name": "Valid Until", "value": code.duration.valid or "-", "inline": True},
             ],
+            "images": [{"url": f"/assets/{self.game_folder}.jpg"}],
+            "footer": {"text": "Hoyo Code"},
+            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S.000Z", time.gmtime()),
         }
 
         payload = {"embeds": [embed]}
