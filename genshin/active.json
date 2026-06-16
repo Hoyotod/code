@@ -39,25 +39,13 @@
         "status": "active",
         "rewards": [
             {
-                "name": "Recipe: Meat-Lover's Feast×1",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b6/Item_Meat-Lover%27s_Feast.png"
-            },
-            {
-                "name": "Recipe: Nine-Fruit Nectar×1",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/f/fb/Item_Nine-Fruit_Nectar.png"
-            },
-            {
-                "name": "Recipe: Bubblemilk Pie×1",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a8/Item_Bubblemilk_Pie.png"
-            },
-            {
                 "name": "Masked Ball Invitation Letter×1",
                 "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/62/Item_Ball_Invitation_Letter.png"
             }
         ],
         "duration": {
-            "discovered": "May 28, 2026",
-            "valid": null,
+            "discovered": "May 27, 2026",
+            "valid": "July 31, 2026",
             "expired": null,
             "notes": null
         },
