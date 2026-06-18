@@ -1,5 +1,71 @@
 [
     {
+        "code": "TEAPARTYTIME",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Primogem×100",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Mora×50,000",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/84/Item_Mora.png"
+            }
+        ],
+        "duration": {
+            "discovered": "June 18, 2026",
+            "valid": "June 22, 2026",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "TOTHEMOON",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Primogem×100",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Hero's Wit×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/26/Item_Hero%27s_Wit.png"
+            }
+        ],
+        "duration": {
+            "discovered": "June 18, 2026",
+            "valid": "June 22, 2026",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "MARIONETTE",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Primogem×100",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Fine Enhancement Ore×10",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/23/Item_Fine_Enhancement_Ore.png"
+            }
+        ],
+        "duration": {
+            "discovered": "June 18, 2026",
+            "valid": "June 22, 2026",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
         "code": "LCXGEA5SX65L",
         "server": "America, Europe, Asia, TW/HK/Macao",
         "status": "active",
