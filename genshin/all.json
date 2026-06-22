@@ -37,8 +37,8 @@
         ],
         "duration": {
             "discovered": "June 18, 2026",
-            "valid": "June 22, 2026",
-            "expired": null,
+            "valid": null,
+            "expired": "June 22, 2026",
             "notes": null
         },
         "link": null
@@ -59,8 +59,8 @@
         ],
         "duration": {
             "discovered": "June 18, 2026",
-            "valid": "June 22, 2026",
-            "expired": null,
+            "valid": null,
+            "expired": "June 22, 2026",
             "notes": null
         },
         "link": null
@@ -81,8 +81,8 @@
         ],
         "duration": {
             "discovered": "June 18, 2026",
-            "valid": "June 22, 2026",
-            "expired": null,
+            "valid": null,
+            "expired": "June 22, 2026",
             "notes": null
         },
         "link": null
