@@ -116,7 +116,7 @@
         "duration": {
             "discovered": "June 10, 2026",
             "valid": null,
-            "expired": null,
+            "expired": "June 30, 2026",
             "notes": null
         },
         "link": null
@@ -185,8 +185,8 @@
         ],
         "duration": {
             "discovered": "May 15, 2026",
-            "valid": "July 1, 2026",
-            "expired": null,
+            "valid": null,
+            "expired": "July 1, 2026",
             "notes": "From HoyoLab article . Unique in-game mail: A Little Surprise from Nicole"
         },
         "link": null
