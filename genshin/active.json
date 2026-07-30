@@ -1,6 +1,6 @@
 [
     {
-        "code": "EZSB8889C2BZ",
+        "code": "UIVIBUQM6Q8A",
         "server": "America, Europe, Asia, TW/HK/Macao",
         "status": "active",
         "rewards": [
@@ -26,7 +26,7 @@
             }
         ],
         "duration": {
-            "discovered": "July 1, 2026",
+            "discovered": "July 29, 2026",
             "valid": null,
             "expired": null,
             "notes": null
@@ -49,7 +49,7 @@
         ],
         "duration": {
             "discovered": "June 21, 2026",
-            "valid": null,
+            "valid": "September 2, 2026",
             "expired": null,
             "notes": null
         },
@@ -68,50 +68,6 @@
         "duration": {
             "discovered": "May 27, 2026",
             "valid": "July 31, 2026",
-            "expired": null,
-            "notes": null
-        },
-        "link": null
-    },
-    {
-        "code": "NMI20MAJGIBP",
-        "server": "America, Europe, Asia, TW/HK/Macao",
-        "status": "active",
-        "rewards": [
-            {
-                "name": "Primogem×20",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
-            },
-            {
-                "name": "Geode of Replication×160",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a9/Item_Geode_of_Replication.png"
-            }
-        ],
-        "duration": {
-            "discovered": "May 24, 2026",
-            "valid": null,
-            "expired": null,
-            "notes": null
-        },
-        "link": null
-    },
-    {
-        "code": "PFY1S40I88T9",
-        "server": "America, Europe, Asia, TW/HK/Macao",
-        "status": "active",
-        "rewards": [
-            {
-                "name": "Primogem×60",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
-            },
-            {
-                "name": "Adventurer's Experience×5",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/07/Item_Adventurer%27s_Experience.png"
-            }
-        ],
-        "duration": {
-            "discovered": "May 8, 2026",
-            "valid": null,
             "expired": null,
             "notes": null
         },
