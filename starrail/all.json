@@ -1,5 +1,27 @@
 [
     {
+        "code": "NSJR3B97ZZ5X",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Stellar Jade×50",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/d/d9/Item_Stellar_Jade.png"
+            },
+            {
+                "name": "Credit×10000",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/d/d9/Item_Credit.png"
+            }
+        ],
+        "duration": {
+            "discovered": null,
+            "valid": "Unknown",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
         "code": "YAJQ2TR6ZY2P",
         "server": "All",
         "status": "expired",
@@ -60,6 +82,50 @@
         "duration": {
             "discovered": null,
             "valid": null,
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "STARRAILFATE2026",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "The Fluffy Multi-Functional Fan Glowstick×2",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/b/bf/Item_The_Fluffy_Multi-Functional_Fan_Glowstick.png"
+            },
+            {
+                "name": "Traveler's Guide×3",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/8a/Item_Travelers_Guide.png"
+            }
+        ],
+        "duration": {
+            "discovered": null,
+            "valid": "Unknown",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "BESTCOFFEEEVER",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Traveler's Guide×3",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/8a/Item_Travelers_Guide.png"
+            },
+            {
+                "name": "Express Special Blend: Rustic Infusion×2",
+                "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/9a/Item_Express_Special_Blend-_Rustic_Infusion.png"
+            }
+        ],
+        "duration": {
+            "discovered": null,
+            "valid": "Unknown",
             "expired": null,
             "notes": null
         },
