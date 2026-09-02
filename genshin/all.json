@@ -112,9 +112,101 @@
         "link": null
     },
     {
-        "code": "XVIZDH2B9WGX",
+        "code": "2BJ64QRZ7RT8",
         "server": "America, Europe, Asia, TW/HK/Macao",
         "status": "active",
+        "rewards": [
+            {
+                "name": "Primogem×60",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Adventurer's Experience×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/07/Item_Adventurer%27s_Experience.png"
+            }
+        ],
+        "duration": {
+            "discovered": "July 31, 2026",
+            "valid": null,
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "YUANSHEN",
+        "server": "China",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Primogem×50",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Hero's Wit×3",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/26/Item_Hero%27s_Wit.png"
+            }
+        ],
+        "duration": {
+            "discovered": "November 10, 2020",
+            "valid": "(indefinite)",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "LEGEDILJKSGM",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "expired",
+        "rewards": [
+            {
+                "name": "Primogem×60",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
+            },
+            {
+                "name": "Adventurer's Experience×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/07/Item_Adventurer%27s_Experience.png"
+            }
+        ],
+        "duration": {
+            "discovered": "June 21, 2026",
+            "valid": null,
+            "expired": "September 2, 2026",
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "GS70XRNWFB",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "expired",
+        "rewards": [
+            {
+                "name": "Mora×30,000",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/84/Item_Mora.png"
+            },
+            {
+                "name": "Hero's Wit×3",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/26/Item_Hero%27s_Wit.png"
+            },
+            {
+                "name": "Fine Enhancement Ore×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/23/Item_Fine_Enhancement_Ore.png"
+            }
+        ],
+        "duration": {
+            "discovered": "August 10, 2026",
+            "valid": null,
+            "expired": "September 1, 2026",
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "XVIZDH2B9WGX",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "expired",
         "rewards": [
             {
                 "name": "Mora×10,000",
@@ -140,99 +232,7 @@
         "duration": {
             "discovered": "August 12, 2026",
             "valid": null,
-            "expired": null,
-            "notes": null
-        },
-        "link": null
-    },
-    {
-        "code": "GS70XRNWFB",
-        "server": "America, Europe, Asia, TW/HK/Macao",
-        "status": "active",
-        "rewards": [
-            {
-                "name": "Mora×30,000",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/84/Item_Mora.png"
-            },
-            {
-                "name": "Hero's Wit×3",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/26/Item_Hero%27s_Wit.png"
-            },
-            {
-                "name": "Fine Enhancement Ore×5",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/23/Item_Fine_Enhancement_Ore.png"
-            }
-        ],
-        "duration": {
-            "discovered": "August 10, 2026",
-            "valid": null,
-            "expired": null,
-            "notes": null
-        },
-        "link": null
-    },
-    {
-        "code": "2BJ64QRZ7RT8",
-        "server": "America, Europe, Asia, TW/HK/Macao",
-        "status": "active",
-        "rewards": [
-            {
-                "name": "Primogem×60",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
-            },
-            {
-                "name": "Adventurer's Experience×5",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/07/Item_Adventurer%27s_Experience.png"
-            }
-        ],
-        "duration": {
-            "discovered": "July 31, 2026",
-            "valid": null,
-            "expired": null,
-            "notes": null
-        },
-        "link": null
-    },
-    {
-        "code": "LEGEDILJKSGM",
-        "server": "America, Europe, Asia, TW/HK/Macao",
-        "status": "active",
-        "rewards": [
-            {
-                "name": "Primogem×60",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
-            },
-            {
-                "name": "Adventurer's Experience×5",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/07/Item_Adventurer%27s_Experience.png"
-            }
-        ],
-        "duration": {
-            "discovered": "June 21, 2026",
-            "valid": "September 2, 2026",
-            "expired": null,
-            "notes": null
-        },
-        "link": null
-    },
-    {
-        "code": "YUANSHEN",
-        "server": "China",
-        "status": "active",
-        "rewards": [
-            {
-                "name": "Primogem×50",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d4/Item_Primogem.png"
-            },
-            {
-                "name": "Hero's Wit×3",
-                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/26/Item_Hero%27s_Wit.png"
-            }
-        ],
-        "duration": {
-            "discovered": "November 10, 2020",
-            "valid": "(indefinite)",
-            "expired": null,
+            "expired": "September 1, 2026",
             "notes": null
         },
         "link": null
