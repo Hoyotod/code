@@ -1,7 +1,6 @@
 # utils/starrail_scraper.py
-import re
-
-from .models import Code, Duration, Reward
+from .constants import STATUS_ACTIVE, STATUS_EXPIRED
+from .models import Code
 from .scraper_base import ScraperBase
 
 
@@ -9,41 +8,6 @@ class StarrailScraper(ScraperBase):
     def __init__(self):
         super().__init__(game_name="Honkai Starrail", game_color="magenta", folder_name="starrail")
         self.url = "https://honkai-star-rail.fandom.com/wiki/Redemption_Code"
-
-    def _extract_rewards(self, cell) -> list[Reward]:
-        """Ekstrak daftar hadiah dari kolom tabel."""
-        rewards = []
-        items = cell.find_all("span", class_="item")
-
-        for item in items:
-            name_tag = item.find("span", class_="item-text")
-            if not name_tag:
-                continue
-
-            name = name_tag.get_text(strip=True)
-
-            img_tag = item.find("img")
-            img_url = ""
-            if img_tag:
-                src = img_tag.get("data-src") or img_tag.get("src")
-                if src:
-                    img_url = src.split(".png")[0] + ".png"
-
-            rewards.append(Reward(name=name, image=img_url))
-
-        return rewards
-
-    def _extract_duration(self, text: str) -> Duration:
-
-        discovered_match = re.search(r"Discovered: (.*?)(?:$|Valid|Expired|Notes)", text)
-        valid_match = re.search(r"Valid(?: until)?: (.*?)(?:$|Discovered|Expired|Notes)", text)
-        expired_match = re.search(r"Expired: (.*?)(?:$|Discovered|Valid|Notes)", text)
-
-        return Duration(
-            discovered=discovered_match.group(1).strip() if discovered_match else None,
-            valid=valid_match.group(1).strip() if valid_match else None,
-            expired=expired_match.group(1).strip() if expired_match else None,
-        )
 
     def scrape(self):
         self.log("🔍 Memulai scraping...")
@@ -72,18 +36,18 @@ class StarrailScraper(ScraperBase):
                         duration_raw_txt = cols[3].get_text(strip=True)
                         duration = self._extract_duration(duration_raw_txt)
 
-                        status = "active"
+                        status = STATUS_ACTIVE
 
                         if duration.expired:
-                            status = "expired"
+                            status = STATUS_EXPIRED
                         elif duration.valid and "Unknown" in duration.valid:
-                            status = "active"
+                            status = STATUS_ACTIVE
                         elif "Expired" in duration_raw_txt or "expired" in duration_raw_txt.lower():
-                            status = "expired"
+                            status = STATUS_EXPIRED
 
                         for code_tag in code_tags:
                             code_txt = code_tag.get_text(strip=True)
-                            code_clean = re.sub(r"[^A-Z0-9]", "", code_txt.upper())
+                            code_clean = self._clean_code(code_txt)
 
                             if not code_clean:
                                 continue

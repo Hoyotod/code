@@ -1,0 +1,146 @@
+[
+    {
+        "code": "FLINTWORKS",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Polychrome×300",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4c/Item_Polychrome.png"
+            },
+            {
+                "name": "Senior Investigator Log×2",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/1c/Item_Senior_Investigator_Log.png"
+            },
+            {
+                "name": "W-Engine Energy Module×3",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/5/54/Item_W-Engine_Energy_Module.png"
+            },
+            {
+                "name": "Denny×30,000",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Item_Denny.png"
+            }
+        ],
+        "duration": {
+            "discovered": "August 28, 2026 August 28, 2026 1 week ago",
+            "valid": null,
+            "expired": "August 30, 2026 August 30, 2026 6 days ago",
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "ZZZMEIJI",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Senior Investigator Log×3",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/1c/Item_Senior_Investigator_Log.png"
+            },
+            {
+                "name": "W-Engine Energy Module×3",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/5/54/Item_W-Engine_Energy_Module.png"
+            },
+            {
+                "name": "Denny×30,000",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Item_Denny.png"
+            }
+        ],
+        "duration": {
+            "discovered": "July 24, 2026 July 24, 2026 1 month ago",
+            "valid": "September 8, 2026 September 8, 2026 In 2 days",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "ZZZ2YEAR",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Polychrome×50",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4c/Item_Polychrome.png"
+            }
+        ],
+        "duration": {
+            "discovered": "July 18, 2026 July 18, 2026 1 month ago",
+            "valid": "Unknown",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "ZZZ31REMIELLE",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Polychrome×60",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4c/Item_Polychrome.png"
+            },
+            {
+                "name": "Denny×6,666",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Item_Denny.png"
+            }
+        ],
+        "duration": {
+            "discovered": "July 17, 2026 July 17, 2026 1 month ago",
+            "valid": "Unknown",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "CBW0884678",
+        "server": "Asia",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Denny×20,000",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Item_Denny.png"
+            }
+        ],
+        "duration": {
+            "discovered": "June 17, 2025 June 17, 2025 1 year, 2 months ago",
+            "valid": "Unknown",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "ZENLESSGIFT",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Polychrome×50",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4c/Item_Polychrome.png"
+            },
+            {
+                "name": "Official Investigator Log×2",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/5/56/Item_Official_Investigator_Log.png"
+            },
+            {
+                "name": "W-Engine Power Supply×3",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/7b/Item_W-Engine_Power_Supply.png"
+            },
+            {
+                "name": "Bangboo Algorithm Module×1",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/1b/Item_Bangboo_Algorithm_Module.png"
+            }
+        ],
+        "duration": {
+            "discovered": "July 4, 2024 July 4, 2024 2 years, 2 months ago",
+            "valid": "(indefinite)",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    }
+]

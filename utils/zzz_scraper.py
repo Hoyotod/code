@@ -3,11 +3,11 @@ from .models import Code
 from .scraper_base import ScraperBase
 
 
-class GenshinScraper(ScraperBase):
+class ZZZScraper(ScraperBase):
     def __init__(self):
-        super().__init__(game_name="Genshin Impact", game_color="blue", folder_name="genshin")
-        self.active_url = "https://genshin-impact.fandom.com/wiki/Promotional_Code"
-        self.history_url = "https://genshin-impact.fandom.com/wiki/Promotional_Code/History"
+        super().__init__(game_name="Zenless Zone Zero", game_color="yellow", folder_name="zzz")
+        self.active_url = "https://zenless-zone-zero.fandom.com/wiki/Redemption_Code"
+        self.history_url = "https://zenless-zone-zero.fandom.com/wiki/Redemption_Code/History"
 
     def _parse_table(self, soup, status: str) -> list[Code]:
         codes = []

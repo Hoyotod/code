@@ -2,26 +2,31 @@ import argparse
 import json
 import os
 import shutil
-import time
 
 from curl_cffi import requests
 from rich.console import Console
 from rich.panel import Panel
+
+from utils.constants import WEBHOOK_TIMEOUT
 from utils.genshin_scraper import GenshinScraper
+from utils.models import Code, Duration, Reward
 from utils.starrail_scraper import StarrailScraper
-from utils.models import Code, Reward, Duration
+from utils.zzz_scraper import ZZZScraper
 
 console = Console()
+
+SCRAPERS = [
+    GenshinScraper(),
+    StarrailScraper(),
+    ZZZScraper(),
+]
 
 
 def reset_folders():
     """Menghapus dan membuat ulang folder data game."""
     console.print("[bold yellow]🔄 Mereset folder data...[/bold yellow]")
-    for folder in [
-        "genshin",
-        # "honkai",
-        "starrail",
-    ]:
+    for scraper in SCRAPERS:
+        folder = scraper.game_folder
         if os.path.exists(folder):
             shutil.rmtree(folder)
         os.makedirs(folder, exist_ok=True)
@@ -32,13 +37,17 @@ def send_all_active_codes_webhook():
     """Mengirim semua kode aktif ke Discord webhook setelah reset."""
     webhook_url = os.getenv("DISCORD_WEBHOOK_URL")
     if not webhook_url:
-        console.print("[dim yellow]⚠️ Tidak ada DISCORD_WEBHOOK_URL, melewatkan pengiriman.[/dim yellow]")
+        console.print(
+            "[dim yellow]⚠️ Tidak ada DISCORD_WEBHOOK_URL, melewatkan pengiriman.[/dim yellow]"
+        )
         return
 
     console.print("[bold cyan]📤 Mengirim semua kode aktif ke Discord...[/bold cyan]")
     total_sent = 0
 
-    for game_folder in ["genshin", "starrail"]:
+    scraper_map = {scraper.game_folder: scraper for scraper in SCRAPERS}
+
+    for game_folder, scraper in scraper_map.items():
         active_json = os.path.join(game_folder, "active.json")
 
         if not os.path.exists(active_json):
@@ -54,17 +63,26 @@ def send_all_active_codes_webhook():
                     for r in code_dict.get("rewards", []) or []:
                         try:
                             rewards_list.append(Reward(**r))
-                        except Exception:
-                            pass
+                        except Exception as e:
+                            console.print(f"[dim yellow]⚠️ Error parsing reward: {e}[/dim yellow]")
 
                     duration_dict = code_dict.get("duration") or {}
                     try:
-                        duration_obj = Duration(**duration_dict) if isinstance(duration_dict, dict) else Duration()
-                    except Exception:
+                        duration_obj = (
+                            Duration(**duration_dict)
+                            if isinstance(duration_dict, dict)
+                            else Duration()
+                        )
+                    except Exception as e:
+                        console.print(f"[dim yellow]⚠️ Error parsing duration: {e}[/dim yellow]")
                         duration_obj = Duration()
 
+                    code_str = code_dict.get("code", "")
+                    if not code_str:
+                        continue
+
                     code_obj = Code(
-                        code=code_dict.get("code", ""),
+                        code=code_str,
                         server=code_dict.get("server", ""),
                         status=code_dict.get("status", ""),
                         rewards=rewards_list,
@@ -72,52 +90,29 @@ def send_all_active_codes_webhook():
                         link=code_dict.get("link"),
                     )
 
-                    # Tentukan game name dari folder
-                    game_name = "Genshin Impact" if game_folder == "genshin" else "Honkai: Star Rail"
-
-                    # Kirim webhook
-                    rewards = code_obj.rewards or []
-                    if rewards:
-                        rewards_text = "\n".join(f"- {r.name}" for r in rewards)
-                    else:
-                        rewards_text = "-"
-
-                    color_active = 0x2ECC71
-                    embed_color = color_active
-
-                    embed = {
-                        "author": {"name": game_name},
-                        "title": f"{code_obj.code}",
-                        "description": f"**Server:** {code_obj.server}\n**Link:** {code_obj.link}\n",
-                        "url": code_obj.link or None,
-                        "color": embed_color,
-                        "fields": [
-                            {"name": "Rewards", "value": rewards_text, "inline": False},
-                        ],
-                        "image": {"url": f"https://raw.githubusercontent.com/Hoyotod/code/main/assets/{game_folder}.jpg"},
-                        "footer": {"text": "Hoyo Code"},
-                        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S.000Z", time.gmtime()),
-                    }
-
-                    payload = {"embeds": [embed]}
+                    payload = scraper.build_webhook_payload(code_obj)
 
                     try:
-                        resp = requests.post(webhook_url, json=payload, timeout=10)
+                        resp = requests.post(webhook_url, json=payload, timeout=WEBHOOK_TIMEOUT)
                         if resp.status_code in (200, 201, 204):
                             total_sent += 1
                         else:
-                            console.print(f"[dim red]❌ Gagal mengirim {code_dict.get('code')} (status: {resp.status_code})[/dim red]")
-                    except Exception as e:
-                        console.print(f"[dim red]❌ Error mengirim {code_dict.get('code')}: {e}[/dim red]")
+                            console.print(
+                                f"[dim red]❌ Gagal mengirim {code_str} "
+                                f"(status: {resp.status_code})[/dim red]"
+                            )
+                    except requests.exceptions.RequestException as e:
+                        console.print(f"[dim red]❌ Error mengirim {code_str}: {e}[/dim red]")
 
                 except Exception as e:
                     console.print(f"[dim red]❌ Error memproses kode: {e}[/dim red]")
 
-        except Exception as e:
+        except (json.JSONDecodeError, OSError) as e:
             console.print(f"[dim red]❌ Error membaca {active_json}: {e}[/dim red]")
 
-    console.print(f"[bold green]✅ Berhasil mengirim {total_sent} kode aktif ke Discord.[/bold green]")
-
+    console.print(
+        f"[bold green]✅ Berhasil mengirim {total_sent} kode aktif ke Discord.[/bold green]"
+    )
 
 
 def main(should_reset=False):
@@ -136,13 +131,7 @@ def main(should_reset=False):
         reset_folders()
         console.print("")
 
-    scrapers = [
-        GenshinScraper(),
-        StarrailScraper(),
-        # HonkaiScraper() # disable due to inconsistent site structure
-    ]
-
-    for scraper in scrapers:
+    for scraper in SCRAPERS:
         console.print(
             Panel(
                 f"▶️ Memulai Scraper: [bold]{scraper.game_name}[/bold]",
@@ -159,11 +148,9 @@ def main(should_reset=False):
         )
     )
 
-    # Kirim semua kode aktif ke webhook jika reset flag digunakan
     if should_reset is True:
         console.print("")
         send_all_active_codes_webhook()
-
 
 
 if __name__ == "__main__":
@@ -179,6 +166,6 @@ if __name__ == "__main__":
     try:
         main(should_reset=args.reset)
     except KeyboardInterrupt:
-        console.print(
-            "\n[bold red]⛔ Proses dihentikan paksa oleh pengguna.[/bold red]"
-        )
+        console.print("\n[bold red]⛔ Proses dihentikan paksa oleh pengguna.[/bold red]")
+    except Exception as e:
+        console.print(f"\n[bold red]❌ Error tidak terduga: {e}[/bold red]")
