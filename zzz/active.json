@@ -24,7 +24,7 @@
         "duration": {
             "discovered": "August 28, 2026 August 28, 2026 1 week ago",
             "valid": null,
-            "expired": "August 30, 2026 August 30, 2026 6 days ago",
+            "expired": "August 30, 2026 August 30, 2026 1 week ago",
             "notes": null
         },
         "link": null
@@ -49,8 +49,8 @@
         ],
         "duration": {
             "discovered": "July 24, 2026 July 24, 2026 1 month ago",
-            "valid": "September 8, 2026 September 8, 2026 In 2 days",
-            "expired": null,
+            "valid": null,
+            "expired": "September 8, 2026 September 8, 2026 14 hours ago",
             "notes": null
         },
         "link": null
