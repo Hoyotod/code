@@ -3,14 +3,14 @@ from utils.scraper_base import ScraperBase
 
 
 class MockScraper(ScraperBase):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(game_name="Test Game", game_color="cyan", folder_name="test")
 
-    def scrape(self):
+    def scrape(self) -> None:
         pass
 
 
-def test_clean_code():
+def test_clean_code() -> None:
     scraper = MockScraper()
     assert scraper._clean_code("ABC123") == "ABC123"
     assert scraper._clean_code("abc-123") == "ABC123"
@@ -19,7 +19,7 @@ def test_clean_code():
     assert scraper._clean_code("lower123") == "LOWER123"
 
 
-def test_extract_duration():
+def test_extract_duration() -> None:
     scraper = MockScraper()
 
     text1 = "Discovered: 2023-01-01 Valid: 2023-12-31"
@@ -40,7 +40,7 @@ def test_extract_duration():
     assert duration3.expired is None
 
 
-def test_normalize_code_data():
+def test_normalize_code_data() -> None:
     scraper = MockScraper()
 
     data1 = [{"code": "ABC", "status": "active"}, {"code": "XYZ", "status": "expired"}]
@@ -52,7 +52,7 @@ def test_normalize_code_data():
     assert normalized1 == normalized2
 
 
-def test_build_webhook_payload():
+def test_build_webhook_payload() -> None:
     from utils.constants import COLOR_ACTIVE, STATUS_ACTIVE
     from utils.models import Code, Reward
 

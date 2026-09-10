@@ -5,11 +5,11 @@ from .scraper_base import ScraperBase
 
 
 class StarrailScraper(ScraperBase):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(game_name="Honkai Starrail", game_color="magenta", folder_name="starrail")
         self.url = "https://honkai-star-rail.fandom.com/wiki/Redemption_Code"
 
-    def scrape(self):
+    def scrape(self) -> None:
         self.log("🔍 Memulai scraping...")
         soup = self.get_soup(self.url)
         results = []

@@ -1,16 +1,18 @@
+from bs4 import BeautifulSoup
+
 from .constants import STATUS_ACTIVE, STATUS_EXPIRED
 from .models import Code
 from .scraper_base import ScraperBase
 
 
 class ZZZScraper(ScraperBase):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(game_name="Zenless Zone Zero", game_color="yellow", folder_name="zzz")
         self.active_url = "https://zenless-zone-zero.fandom.com/wiki/Redemption_Code"
         self.history_url = "https://zenless-zone-zero.fandom.com/wiki/Redemption_Code/History"
 
-    def _parse_table(self, soup, status: str) -> list[Code]:
-        codes = []
+    def _parse_table(self, soup: BeautifulSoup | None, status: str) -> list[Code]:
+        codes: list[Code] = []
         if not soup:
             return codes
 
@@ -60,7 +62,7 @@ class ZZZScraper(ScraperBase):
 
         return codes
 
-    def scrape(self):
+    def scrape(self) -> None:
         all_results = []
 
         self.log("🔍 Memulai scraping kode AKTIF...")

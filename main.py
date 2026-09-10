@@ -22,7 +22,7 @@ SCRAPERS = [
 ]
 
 
-def reset_folders():
+def reset_folders() -> None:
     """Menghapus dan membuat ulang folder data game."""
     console.print("[bold yellow]🔄 Mereset folder data...[/bold yellow]")
     for scraper in SCRAPERS:
@@ -33,7 +33,7 @@ def reset_folders():
     console.print("[bold green]✅ Folder berhasil di-reset.[/bold green]")
 
 
-def send_all_active_codes_webhook():
+def send_all_active_codes_webhook() -> None:
     """Mengirim semua kode aktif ke Discord webhook setelah reset."""
     webhook_url = os.getenv("DISCORD_WEBHOOK_URL")
     if not webhook_url:
@@ -115,7 +115,7 @@ def send_all_active_codes_webhook():
     )
 
 
-def main(should_reset=False):
+def main(should_reset: bool = False) -> None:
     """Fungsi utama untuk menjalankan semua scraper secara berurutan."""
 
     console.print(

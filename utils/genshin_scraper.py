@@ -1,16 +1,18 @@
+from bs4 import BeautifulSoup
+
 from .constants import STATUS_ACTIVE, STATUS_EXPIRED
 from .models import Code
 from .scraper_base import ScraperBase
 
 
 class GenshinScraper(ScraperBase):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(game_name="Genshin Impact", game_color="blue", folder_name="genshin")
         self.active_url = "https://genshin-impact.fandom.com/wiki/Promotional_Code"
         self.history_url = "https://genshin-impact.fandom.com/wiki/Promotional_Code/History"
 
-    def _parse_table(self, soup, status: str) -> list[Code]:
-        codes = []
+    def _parse_table(self, soup: BeautifulSoup | None, status: str) -> list[Code]:
+        codes: list[Code] = []
         if not soup:
             return codes
 
@@ -60,7 +62,7 @@ class GenshinScraper(ScraperBase):
 
         return codes
 
-    def scrape(self):
+    def scrape(self) -> None:
         all_results = []
 
         self.log("🔍 Memulai scraping kode AKTIF...")

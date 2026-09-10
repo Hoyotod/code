@@ -6,6 +6,7 @@ import random
 import re
 import time
 from abc import ABC, abstractmethod
+from typing import Any
 
 from bs4 import BeautifulSoup
 from curl_cffi import requests
@@ -40,7 +41,7 @@ class ScraperBase(ABC):
 
         os.makedirs(self.game_folder, exist_ok=True)
 
-    def log(self, message: str, style: str = "white"):
+    def log(self, message: str, style: str = "white") -> None:
         """Helper untuk logging dengan warna spesifik game."""
         console.print(
             f"[{self.game_color}][{self.game_name}][/{self.game_color}] {message}",
@@ -75,7 +76,7 @@ class ScraperBase(ABC):
 
                 try:
                     response = requests.get(
-                        url, impersonate=opt_impersonate, timeout=REQUEST_TIMEOUT
+                        url, impersonate=opt_impersonate, timeout=REQUEST_TIMEOUT  # type: ignore[arg-type]
                     )
                 except requests.exceptions.RequestException as e:
                     self.log(
@@ -135,7 +136,7 @@ class ScraperBase(ABC):
             json.dumps(code_dict, sort_keys=True, ensure_ascii=False) for code_dict in code_dicts
         )
 
-    def save_results(self, codes: list[Code]):
+    def save_results(self, codes: list[Code]) -> None:
         """Menyimpan data ke JSON dan TXT."""
         if not codes:
             self.log(
@@ -242,10 +243,7 @@ class ScraperBase(ABC):
     def build_webhook_payload(self, code: Code) -> dict:
         """Build Discord embed payload for a code."""
         rewards = code.rewards or []
-        if rewards:
-            rewards_text = "\n".join(f"- {r.name}" for r in rewards)
-        else:
-            rewards_text = "-"
+        rewards_text = "\n".join(f"- {r.name}" for r in rewards) if rewards else "-"
 
         embed_color = COLOR_ACTIVE if code.status == STATUS_ACTIVE else COLOR_EXPIRED
 
@@ -264,7 +262,7 @@ class ScraperBase(ABC):
 
         return {"embeds": [embed]}
 
-    def send_new_code_webhook(self, code: Code, webhook_url: str | None = None):
+    def send_new_code_webhook(self, code: Code, webhook_url: str | None = None) -> None:
         """Kirim embed ke Discord webhook untuk kode baru.
 
         Builds a simple embed containing the code, server, status, rewards and link.
@@ -292,7 +290,7 @@ class ScraperBase(ABC):
         except requests.exceptions.RequestException as e:
             self.log(f"❌ Error saat mengirim webhook: {e}", style="bold red")
 
-    def _extract_rewards(self, cell) -> list[Reward]:
+    def _extract_rewards(self, cell: Any) -> list[Reward]:
         """Extract rewards from a fandom wiki table cell."""
         rewards = []
         items = cell.find_all("span", class_="item")
@@ -330,6 +328,6 @@ class ScraperBase(ABC):
         return re.sub(r"[^A-Z0-9]", "", code_text.upper())
 
     @abstractmethod
-    def scrape(self):
+    def scrape(self) -> None:
         """Implementasi spesifik tiap game."""
         pass
