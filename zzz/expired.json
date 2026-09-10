@@ -18,9 +18,9 @@
             }
         ],
         "duration": {
-            "discovered": "July 24, 2026 July 24, 2026 1 month ago",
+            "discovered": "July 24, 2026",
             "valid": null,
-            "expired": "September 8, 2026 September 8, 2026 1 day ago",
+            "expired": "September 8, 2026",
             "notes": null
         },
         "link": null
@@ -36,9 +36,9 @@
             }
         ],
         "duration": {
-            "discovered": "July 18, 2026 July 18, 2026 1 month ago",
+            "discovered": "July 18, 2026",
             "valid": null,
-            "expired": "September 8, 2026 September 8, 2026 2 days ago",
+            "expired": "September 8, 2026",
             "notes": null
         },
         "link": null
@@ -58,9 +58,9 @@
             }
         ],
         "duration": {
-            "discovered": "July 17, 2026 July 17, 2026 1 month ago",
+            "discovered": "July 17, 2026",
             "valid": null,
-            "expired": "September 8, 2026 September 8, 2026 2 days ago",
+            "expired": "September 8, 2026",
             "notes": null
         },
         "link": null
@@ -76,9 +76,9 @@
             }
         ],
         "duration": {
-            "discovered": "June 17, 2025 June 17, 2025 1 year, 2 months ago",
+            "discovered": "June 17, 2025",
             "valid": null,
-            "expired": "September 8, 2026 September 8, 2026 2 days ago",
+            "expired": "September 8, 2026",
             "notes": null
         },
         "link": null
@@ -106,9 +106,9 @@
             }
         ],
         "duration": {
-            "discovered": "August 28, 2026 August 28, 2026 1 week ago",
+            "discovered": "August 28, 2026",
             "valid": null,
-            "expired": "August 30, 2026 August 30, 2026 1 week ago",
+            "expired": "August 30, 2026",
             "notes": null
         },
         "link": null
@@ -132,7 +132,7 @@
             }
         ],
         "duration": {
-            "discovered": "August 3, 2026 August 3, 2026 1 month ago",
+            "discovered": "August 3, 2026",
             "valid": null,
             "expired": "Unknown",
             "notes": "Max usage limit reached"
@@ -150,7 +150,7 @@
             }
         ],
         "duration": {
-            "discovered": "July 31, 2026 July 31, 2026 1 month ago",
+            "discovered": "July 31, 2026",
             "valid": null,
             "expired": "Unknown",
             "notes": "Max usage limit reached"
@@ -168,9 +168,9 @@
             }
         ],
         "duration": {
-            "discovered": "July 28, 2026 July 28, 2026 1 month ago",
+            "discovered": "July 28, 2026",
             "valid": null,
-            "expired": "July 29, 2026 July 29, 2026 1 month ago",
+            "expired": "July 29, 2026",
             "notes": null
         },
         "link": null
@@ -186,9 +186,9 @@
             }
         ],
         "duration": {
-            "discovered": "June 9, 2026 June 9, 2026 3 months ago",
+            "discovered": "June 9, 2026",
             "valid": null,
-            "expired": "July 29, 2026 July 29, 2026 1 month ago",
+            "expired": "July 29, 2026",
             "notes": null
         },
         "link": null
@@ -204,9 +204,9 @@
             }
         ],
         "duration": {
-            "discovered": "June 9, 2026 June 9, 2026 3 months ago",
+            "discovered": "June 9, 2026",
             "valid": null,
-            "expired": "July 29, 2026 July 29, 2026 1 month ago",
+            "expired": "July 29, 2026",
             "notes": null
         },
         "link": null
@@ -226,9 +226,9 @@
             }
         ],
         "duration": {
-            "discovered": "June 7, 2026 June 7, 2026 3 months ago",
+            "discovered": "June 7, 2026",
             "valid": null,
-            "expired": "July 29, 2026 July 29, 2026 1 month ago",
+            "expired": "July 29, 2026",
             "notes": null
         },
         "link": null
@@ -256,9 +256,9 @@
             }
         ],
         "duration": {
-            "discovered": "June 11, 2026 June 11, 2026 2 months ago",
+            "discovered": "June 11, 2026",
             "valid": null,
-            "expired": "July 29, 2026 July 29, 2026 1 month ago",
+            "expired": "July 29, 2026",
             "notes": null
         },
         "link": null
@@ -278,9 +278,9 @@
             }
         ],
         "duration": {
-            "discovered": "June 11, 2026 June 11, 2026 2 months ago",
+            "discovered": "June 11, 2026",
             "valid": null,
-            "expired": "July 28, 2026 July 28, 2026 1 month ago",
+            "expired": "July 28, 2026",
             "notes": null
         },
         "link": null
@@ -308,9 +308,9 @@
             }
         ],
         "duration": {
-            "discovered": "July 17, 2026 July 17, 2026 1 month ago",
+            "discovered": "July 17, 2026",
             "valid": null,
-            "expired": "July 19, 2026 July 19, 2026 1 month ago",
+            "expired": "July 19, 2026",
             "notes": null
         },
         "link": null
@@ -330,7 +330,7 @@
             }
         ],
         "duration": {
-            "discovered": "July 17, 2026 July 17, 2026 1 month ago",
+            "discovered": "July 17, 2026",
             "valid": null,
             "expired": "Unknown",
             "notes": "Max usage limit reached"
@@ -348,7 +348,7 @@
             }
         ],
         "duration": {
-            "discovered": "July 17, 2026 July 17, 2026 1 month ago",
+            "discovered": "July 17, 2026",
             "valid": null,
             "expired": "Unknown",
             "notes": "Max usage limit reached"
@@ -370,9 +370,9 @@
             }
         ],
         "duration": {
-            "discovered": "June 4, 2026 June 4, 2026 3 months ago",
+            "discovered": "June 4, 2026",
             "valid": null,
-            "expired": "June 17, 2026 June 17, 2026 2 months ago",
+            "expired": "June 17, 2026",
             "notes": null
         },
         "link": null
@@ -392,9 +392,9 @@
             }
         ],
         "duration": {
-            "discovered": "May 6, 2026 May 6, 2026 4 months ago",
+            "discovered": "May 6, 2026",
             "valid": null,
-            "expired": "June 17, 2026 June 17, 2026 2 months ago",
+            "expired": "June 17, 2026",
             "notes": null
         },
         "link": null
@@ -414,9 +414,9 @@
             }
         ],
         "duration": {
-            "discovered": "April 27, 2026 April 27, 2026 4 months ago",
+            "discovered": "April 27, 2026",
             "valid": null,
-            "expired": "June 17, 2026 June 17, 2026 2 months ago",
+            "expired": "June 17, 2026",
             "notes": null
         },
         "link": null
@@ -432,9 +432,9 @@
             }
         ],
         "duration": {
-            "discovered": "May 6, 2025 May 6, 2025 1 year, 4 months ago",
+            "discovered": "May 6, 2025",
             "valid": null,
-            "expired": "June 17, 2026 June 17, 2026 2 months ago",
+            "expired": "June 17, 2026",
             "notes": null
         },
         "link": null
@@ -462,9 +462,9 @@
             }
         ],
         "duration": {
-            "discovered": "June 6, 2026 June 6, 2026 3 months ago",
+            "discovered": "June 6, 2026",
             "valid": null,
-            "expired": "June 8, 2026 June 8, 2026 3 months ago",
+            "expired": "June 8, 2026",
             "notes": null
         },
         "link": null
@@ -484,9 +484,9 @@
             }
         ],
         "duration": {
-            "discovered": "March 27, 2026 March 27, 2026 5 months ago",
+            "discovered": "March 27, 2026",
             "valid": null,
-            "expired": "May 6, 2026 May 6, 2026 4 months ago",
+            "expired": "May 6, 2026",
             "notes": null
         },
         "link": null
@@ -506,9 +506,9 @@
             }
         ],
         "duration": {
-            "discovered": "March 24, 2026 March 24, 2026 5 months ago",
+            "discovered": "March 24, 2026",
             "valid": null,
-            "expired": "May 6, 2026 May 6, 2026 4 months ago",
+            "expired": "May 6, 2026",
             "notes": null
         },
         "link": null
@@ -528,9 +528,9 @@
             }
         ],
         "duration": {
-            "discovered": "March 14, 2026 March 14, 2026 5 months ago",
+            "discovered": "March 14, 2026",
             "valid": null,
-            "expired": "May 6, 2026 May 6, 2026 4 months ago",
+            "expired": "May 6, 2026",
             "notes": null
         },
         "link": null
@@ -558,9 +558,9 @@
             }
         ],
         "duration": {
-            "discovered": "April 24, 2026 April 24, 2026 4 months ago",
+            "discovered": "April 24, 2026",
             "valid": null,
-            "expired": "April 26, 2026 April 26, 2026 4 months ago",
+            "expired": "April 26, 2026",
             "notes": null
         },
         "link": null
@@ -580,7 +580,7 @@
             }
         ],
         "duration": {
-            "discovered": "April 3, 2026 April 3, 2026 5 months ago",
+            "discovered": "April 3, 2026",
             "valid": null,
             "expired": "Unknown",
             "notes": "Max usage limit reached"
@@ -602,9 +602,9 @@
             }
         ],
         "duration": {
-            "discovered": "February 9, 2026 February 9, 2026 7 months ago",
+            "discovered": "February 9, 2026",
             "valid": null,
-            "expired": "March 31, 2026 March 31, 2026 5 months ago",
+            "expired": "March 31, 2026",
             "notes": null
         },
         "link": null
@@ -624,9 +624,9 @@
             }
         ],
         "duration": {
-            "discovered": "February 7, 2026 February 7, 2026 7 months ago",
+            "discovered": "February 7, 2026",
             "valid": null,
-            "expired": "March 31, 2026 March 31, 2026 5 months ago",
+            "expired": "March 31, 2026",
             "notes": null
         },
         "link": null
@@ -650,9 +650,9 @@
             }
         ],
         "duration": {
-            "discovered": "February 20, 2026 February 20, 2026 6 months ago",
+            "discovered": "February 20, 2026",
             "valid": null,
-            "expired": "March 24, 2026 March 24, 2026 5 months ago",
+            "expired": "March 24, 2026",
             "notes": null
         },
         "link": null
@@ -676,9 +676,9 @@
             }
         ],
         "duration": {
-            "discovered": "January 30, 2026 January 30, 2026 7 months ago",
+            "discovered": "January 30, 2026",
             "valid": null,
-            "expired": "March 24, 2026 March 24, 2026 5 months ago",
+            "expired": "March 24, 2026",
             "notes": null
         },
         "link": null
@@ -698,9 +698,9 @@
             }
         ],
         "duration": {
-            "discovered": "February 28, 2026 February 28, 2026 6 months ago",
+            "discovered": "February 28, 2026",
             "valid": null,
-            "expired": "March 24, 2026 March 24, 2026 5 months ago",
+            "expired": "March 24, 2026",
             "notes": null
         },
         "link": null
@@ -720,9 +720,9 @@
             }
         ],
         "duration": {
-            "discovered": "February 19, 2026 February 19, 2026 6 months ago",
+            "discovered": "February 19, 2026",
             "valid": null,
-            "expired": "March 24, 2026 March 24, 2026 5 months ago",
+            "expired": "March 24, 2026",
             "notes": null
         },
         "link": null
@@ -742,9 +742,9 @@
             }
         ],
         "duration": {
-            "discovered": "February 13, 2026 February 13, 2026 6 months ago",
+            "discovered": "February 13, 2026",
             "valid": null,
-            "expired": "March 24, 2026 March 24, 2026 5 months ago",
+            "expired": "March 24, 2026",
             "notes": null
         },
         "link": null
@@ -764,9 +764,9 @@
             }
         ],
         "duration": {
-            "discovered": "February 1, 2026 February 1, 2026 7 months ago",
+            "discovered": "February 1, 2026",
             "valid": null,
-            "expired": "March 24, 2026 March 24, 2026 5 months ago",
+            "expired": "March 24, 2026",
             "notes": null
         },
         "link": null
@@ -794,9 +794,9 @@
             }
         ],
         "duration": {
-            "discovered": "March 14, 2026 March 14, 2026 5 months ago",
+            "discovered": "March 14, 2026",
             "valid": null,
-            "expired": "March 16, 2026 March 16, 2026 5 months ago",
+            "expired": "March 16, 2026",
             "notes": null
         },
         "link": null
@@ -816,7 +816,7 @@
             }
         ],
         "duration": {
-            "discovered": "February 14, 2026 February 14, 2026 6 months ago",
+            "discovered": "February 14, 2026",
             "valid": null,
             "expired": "Unknown",
             "notes": "Max usage limit reached"
@@ -846,7 +846,7 @@
             }
         ],
         "duration": {
-            "discovered": "February 6, 2026 February 6, 2026 7 months ago",
+            "discovered": "February 6, 2026",
             "valid": null,
             "expired": "Unknown",
             "notes": null
@@ -872,7 +872,7 @@
             }
         ],
         "duration": {
-            "discovered": "February 2, 2026 February 2, 2026 7 months ago",
+            "discovered": "February 2, 2026",
             "valid": null,
             "expired": "Unknown",
             "notes": null
@@ -894,9 +894,9 @@
             }
         ],
         "duration": {
-            "discovered": "January 30, 2026 January 30, 2026 7 months ago",
+            "discovered": "January 30, 2026",
             "valid": null,
-            "expired": "February 6, 2026 February 6, 2026 7 months ago",
+            "expired": "February 6, 2026",
             "notes": null
         },
         "link": null
@@ -916,9 +916,9 @@
             }
         ],
         "duration": {
-            "discovered": "January 19, 2026 January 19, 2026 7 months ago",
+            "discovered": "January 19, 2026",
             "valid": null,
-            "expired": "February 6, 2026 February 6, 2026 7 months ago",
+            "expired": "February 6, 2026",
             "notes": null
         },
         "link": null
@@ -938,9 +938,9 @@
             }
         ],
         "duration": {
-            "discovered": "January 3, 2026 January 3, 2026 8 months ago",
+            "discovered": "January 3, 2026",
             "valid": null,
-            "expired": "February 6, 2026 February 6, 2026 7 months ago",
+            "expired": "February 6, 2026",
             "notes": null
         },
         "link": null
@@ -956,9 +956,9 @@
             }
         ],
         "duration": {
-            "discovered": "January 10, 2026 January 10, 2026 7 months ago",
+            "discovered": "January 10, 2026",
             "valid": null,
-            "expired": "February 6, 2026 February 6, 2026 7 months ago",
+            "expired": "February 6, 2026",
             "notes": null
         },
         "link": null
@@ -986,9 +986,9 @@
             }
         ],
         "duration": {
-            "discovered": "January 30, 2026 January 30, 2026 7 months ago",
+            "discovered": "January 30, 2026",
             "valid": null,
-            "expired": "February 1, 2026 February 1, 2026 7 months ago",
+            "expired": "February 1, 2026",
             "notes": null
         },
         "link": null
@@ -1004,7 +1004,7 @@
             }
         ],
         "duration": {
-            "discovered": "January 27, 2026 January 27, 2026 7 months ago",
+            "discovered": "January 27, 2026",
             "valid": null,
             "expired": "Unknown",
             "notes": null
