@@ -33,7 +33,10 @@ class StarrailScraper(ScraperBase):
                         server = cols[1].get_text(strip=True)
                         rewards = self._extract_rewards(cols[2])
 
-                        duration_raw_txt = cols[3].get_text(strip=True)
+                        duration_cell = cols[3]
+                        for mobile_elem in duration_cell.find_all(class_="mobile-only"):
+                            mobile_elem.decompose()
+                        duration_raw_txt = duration_cell.get_text(strip=True)
                         duration = self._extract_duration(duration_raw_txt)
 
                         status = STATUS_ACTIVE

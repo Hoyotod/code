@@ -34,7 +34,11 @@ class ZZZScraper(ScraperBase):
 
             server = cols[1].get_text(strip=True)
             rewards = self._extract_rewards(cols[2])
-            duration_txt = cols[3].get_text(separator=" ", strip=True)
+
+            duration_cell = cols[3]
+            for mobile_elem in duration_cell.find_all(class_="mobile-only"):
+                mobile_elem.decompose()
+            duration_txt = duration_cell.get_text(separator=" ", strip=True)
             duration = self._extract_duration(duration_txt)
 
             for code_tag in code_tags:
