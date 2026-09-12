@@ -113,8 +113,8 @@
         ],
         "duration": {
             "discovered": "August 13, 2026",
-            "valid": "September 6, 2026",
-            "expired": null,
+            "valid": null,
+            "expired": "September 6, 2026",
             "notes": null
         },
         "link": null
