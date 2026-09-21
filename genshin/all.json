@@ -78,6 +78,32 @@
         "link": null
     },
     {
+        "code": "GS71XOXYLG",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Mora×30,000",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/84/Item_Mora.png"
+            },
+            {
+                "name": "Hero's Wit×3",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/26/Item_Hero%27s_Wit.png"
+            },
+            {
+                "name": "Mystic Enhancement Ore×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/55/Item_Mystic_Enhancement_Ore.png"
+            }
+        ],
+        "duration": {
+            "discovered": "September 15, 2026",
+            "valid": null,
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
         "code": "Y6JYMKV6JKSL",
         "server": "America, Europe, Asia, TW/HK/Macao",
         "status": "active",
