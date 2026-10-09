@@ -1,5 +1,35 @@
 [
     {
+        "code": "JRNY2SKY",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Polychrome×300",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4c/Item_Polychrome.png"
+            },
+            {
+                "name": "Senior Investigator Log×2",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/1c/Item_Senior_Investigator_Log.png"
+            },
+            {
+                "name": "W-Engine Energy Module×3",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/5/54/Item_W-Engine_Energy_Module.png"
+            },
+            {
+                "name": "Denny×30,000",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Item_Denny.png"
+            }
+        ],
+        "duration": {
+            "discovered": "October 9, 2026",
+            "valid": "October 11, 2026",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
         "code": "ZZZVOID32",
         "server": "All",
         "status": "active",
