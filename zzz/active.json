@@ -1,6 +1,6 @@
 [
     {
-        "code": "ZZZVOID32",
+        "code": "HOLLOWRUN33",
         "server": "All",
         "status": "active",
         "rewards": [
@@ -14,7 +14,7 @@
             }
         ],
         "duration": {
-            "discovered": "September 12, 2024",
+            "discovered": "October 23, 2026",
             "valid": "Unknown",
             "expired": null,
             "notes": null
@@ -22,44 +22,18 @@
         "link": null
     },
     {
-        "code": "ZZZINK32",
+        "code": "SUNBRINGER",
         "server": "All",
         "status": "active",
         "rewards": [
             {
-                "name": "Polychrome×20",
+                "name": "Polychrome×30",
                 "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4c/Item_Polychrome.png"
-            },
-            {
-                "name": "Denny×2,222",
-                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Item_Denny.png"
             }
         ],
         "duration": {
-            "discovered": "September 11, 2024",
-            "valid": "Unknown",
-            "expired": null,
-            "notes": null
-        },
-        "link": null
-    },
-    {
-        "code": "ZZZGRIND32",
-        "server": "All",
-        "status": "active",
-        "rewards": [
-            {
-                "name": "Polychrome×20",
-                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4c/Item_Polychrome.png"
-            },
-            {
-                "name": "Denny×2,222",
-                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Item_Denny.png"
-            }
-        ],
-        "duration": {
-            "discovered": "September 10, 2024",
-            "valid": "Unknown",
+            "discovered": "October 23, 2026",
+            "valid": "October 29, 2026",
             "expired": null,
             "notes": null
         },
