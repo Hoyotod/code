@@ -14,9 +14,7 @@ def test_genshin_scraper_initialization() -> None:
     assert scraper.game_color == "blue"
     assert scraper.game_folder == "genshin"
     assert scraper.active_url == "https://genshin-impact.fandom.com/wiki/Promotional_Code"
-    assert (
-        scraper.history_url == "https://genshin-impact.fandom.com/wiki/Promotional_Code/History"
-    )
+    assert scraper.history_url == "https://genshin-impact.fandom.com/wiki/Promotional_Code/History"
 
 
 def test_genshin_parse_table_empty() -> None:
@@ -69,7 +67,9 @@ def test_zzz_scraper_initialization() -> None:
     assert scraper.game_color == "yellow"
     assert scraper.game_folder == "zzz"
     assert scraper.active_url == "https://zenless-zone-zero.fandom.com/wiki/Redemption_Code"
-    assert scraper.history_url == "https://zenless-zone-zero.fandom.com/wiki/Redemption_Code/History"
+    assert (
+        scraper.history_url == "https://zenless-zone-zero.fandom.com/wiki/Redemption_Code/History"
+    )
 
 
 def test_zzz_parse_table_empty() -> None:
@@ -141,8 +141,8 @@ def test_starrail_status_detection() -> None:
     soup = BeautifulSoup(html, "html.parser")
 
     with (
-        patch.object(scraper, 'get_soup', return_value=soup),
-        patch.object(scraper, 'save_results') as mock_save,
+        patch.object(scraper, "get_soup", return_value=soup),
+        patch.object(scraper, "save_results") as mock_save,
     ):
         scraper.scrape()
         mock_save.assert_called_once()

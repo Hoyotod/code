@@ -9,7 +9,7 @@ from rich.panel import Panel
 
 from utils.constants import WEBHOOK_TIMEOUT
 from utils.genshin_scraper import GenshinScraper
-from utils.models import Code, Duration, Reward
+from utils.models import Code
 from utils.starrail_scraper import StarrailScraper
 from utils.zzz_scraper import ZZZScraper
 
@@ -59,36 +59,9 @@ def send_all_active_codes_webhook() -> None:
 
             for code_dict in codes_data:
                 try:
-                    rewards_list = []
-                    for r in code_dict.get("rewards", []) or []:
-                        try:
-                            rewards_list.append(Reward(**r))
-                        except Exception as e:
-                            console.print(f"[dim yellow]⚠️ Error parsing reward: {e}[/dim yellow]")
-
-                    duration_dict = code_dict.get("duration") or {}
-                    try:
-                        duration_obj = (
-                            Duration(**duration_dict)
-                            if isinstance(duration_dict, dict)
-                            else Duration()
-                        )
-                    except Exception as e:
-                        console.print(f"[dim yellow]⚠️ Error parsing duration: {e}[/dim yellow]")
-                        duration_obj = Duration()
-
-                    code_str = code_dict.get("code", "")
-                    if not code_str:
+                    code_obj = Code.from_dict(code_dict)
+                    if not code_obj:
                         continue
-
-                    code_obj = Code(
-                        code=code_str,
-                        server=code_dict.get("server", ""),
-                        status=code_dict.get("status", ""),
-                        rewards=rewards_list,
-                        duration=duration_obj,
-                        link=code_dict.get("link"),
-                    )
 
                     payload = scraper.build_webhook_payload(code_obj)
 
@@ -98,11 +71,11 @@ def send_all_active_codes_webhook() -> None:
                             total_sent += 1
                         else:
                             console.print(
-                                f"[dim red]❌ Gagal mengirim {code_str} "
+                                f"[dim red]❌ Gagal mengirim {code_obj.code} "
                                 f"(status: {resp.status_code})[/dim red]"
                             )
                     except requests.exceptions.RequestException as e:
-                        console.print(f"[dim red]❌ Error mengirim {code_str}: {e}[/dim red]")
+                        console.print(f"[dim red]❌ Error mengirim {code_obj.code}: {e}[/dim red]")
 
                 except Exception as e:
                     console.print(f"[dim red]❌ Error memproses kode: {e}[/dim red]")
@@ -112,6 +85,54 @@ def send_all_active_codes_webhook() -> None:
 
     console.print(
         f"[bold green]✅ Berhasil mengirim {total_sent} kode aktif ke Discord.[/bold green]"
+    )
+
+
+def send_all_active_codes_telegram() -> None:
+    """Mengirim semua kode aktif ke channel Telegram setelah reset."""
+    bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
+    chat_id = os.getenv("TELEGRAM_CHAT_ID")
+    if not bot_token or not chat_id:
+        console.print("[dim yellow]\u26a0\ufe0f Telegram tidak dikonfigurasi.[/dim yellow]")
+        return
+
+    console.print("[bold cyan]\U0001f4e4 Mengirim semua kode aktif ke Telegram...[/bold cyan]")
+    total_sent = 0
+
+    scraper_map = {scraper.game_folder: scraper for scraper in SCRAPERS}
+
+    for game_folder, scraper in scraper_map.items():
+        active_json = os.path.join(game_folder, "active.json")
+
+        if not os.path.exists(active_json):
+            continue
+
+        try:
+            with open(active_json, encoding="utf-8") as f:
+                codes_data = json.load(f)
+
+            for code_dict in codes_data:
+                try:
+                    code_obj = Code.from_dict(code_dict)
+                    if not code_obj:
+                        continue
+
+                    try:
+                        scraper.send_new_code_telegram(code_obj)
+                        total_sent += 1
+                    except requests.exceptions.RequestException as e:
+                        console.print(
+                            f"[dim red]\u274c Error kirim Telegram {code_obj.code}: {e}[/dim red]"
+                        )
+
+                except Exception as e:
+                    console.print(f"[dim red]\u274c Error memproses kode: {e}[/dim red]")
+
+        except (json.JSONDecodeError, OSError) as e:
+            console.print(f"[dim red]\u274c Error membaca {active_json}: {e}[/dim red]")
+
+    console.print(
+        f"[bold green]\u2705 Berhasil mengirim {total_sent} kode aktif ke Telegram.[/bold green]"
     )
 
 
@@ -127,7 +148,7 @@ def main(should_reset: bool = False) -> None:
         )
     )
 
-    if should_reset is True:
+    if should_reset:
         reset_folders()
         console.print("")
 
@@ -148,9 +169,10 @@ def main(should_reset: bool = False) -> None:
         )
     )
 
-    if should_reset is True:
+    if should_reset:
         console.print("")
         send_all_active_codes_webhook()
+        send_all_active_codes_telegram()
 
 
 if __name__ == "__main__":

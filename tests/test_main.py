@@ -11,10 +11,13 @@ from main import reset_folders, send_all_active_codes_webhook
 def test_reset_folders_creates_directories(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.chdir(tmp_path)
 
-    with patch("main.SCRAPERS", [
-        MagicMock(game_folder="genshin"),
-        MagicMock(game_folder="starrail"),
-    ]):
+    with patch(
+        "main.SCRAPERS",
+        [
+            MagicMock(game_folder="genshin"),
+            MagicMock(game_folder="starrail"),
+        ],
+    ):
         os.makedirs("genshin", exist_ok=True)
         with open("genshin/test.txt", "w") as f:
             f.write("old data")

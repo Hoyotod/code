@@ -12,7 +12,7 @@ class StarrailScraper(ScraperBase):
     def scrape(self) -> None:
         self.log("🔍 Memulai scraping...")
         soup = self.get_soup(self.url)
-        results = []
+        results: list[Code] = []
 
         if soup:
             content = soup.find("div", class_="mw-parser-output")
@@ -36,7 +36,7 @@ class StarrailScraper(ScraperBase):
                         duration_cell = cols[3]
                         for mobile_elem in duration_cell.find_all(class_="mobile-only"):
                             mobile_elem.decompose()
-                        duration_raw_txt = duration_cell.get_text(strip=True)
+                        duration_raw_txt = duration_cell.get_text(separator=" ", strip=True)
                         duration = self._extract_duration(duration_raw_txt)
 
                         status = STATUS_ACTIVE
@@ -66,4 +66,5 @@ class StarrailScraper(ScraperBase):
                             )
 
             self.log(f"Total kode ditemukan: {len(results)}")
-            self.save_results(results)
+
+        self.save_results(results)

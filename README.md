@@ -37,9 +37,11 @@ Create a `.env` file (optional):
 
 ```bash
 DISCORD_WEBHOOK_URL=your_webhook_url_here
+TELEGRAM_BOT_TOKEN=your_bot_token_here
+TELEGRAM_CHAT_ID=your_channel_id_here
 ```
 
-If not set, the scraper will skip webhook notifications.
+If not set, the scraper will skip the corresponding notifications.
 
 ## Usage
 
@@ -82,6 +84,14 @@ Each game folder contains:
 uv sync --group dev
 ```
 
+### Setup pre-commit hooks
+
+```bash
+uv run pre-commit install
+```
+
+This enables automatic formatting and linting on every commit.
+
 ### Run tests
 
 ```bash
@@ -99,6 +109,12 @@ uv run ruff check .
 
 ```bash
 uv run mypy .
+```
+
+### Run all checks
+
+```bash
+uv run pre-commit run --all-files
 ```
 
 ## Architecture

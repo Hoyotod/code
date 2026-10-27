@@ -8,7 +8,7 @@ import time
 from abc import ABC, abstractmethod
 from typing import Any
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 from curl_cffi import requests
 from rich.console import Console
 
@@ -24,6 +24,8 @@ from .constants import (
     RETRY_DELAY_SHORT,
     STATUS_ACTIVE,
     STATUS_EXPIRED,
+    TELEGRAM_API_BASE,
+    TELEGRAM_TIMEOUT,
     WEBHOOK_TIMEOUT,
 )
 from .models import Code, Duration, Reward
@@ -37,6 +39,8 @@ class ScraperBase(ABC):
         self.game_color = game_color
         self.game_folder = folder_name
         self.discord_webhook_url = os.getenv("DISCORD_WEBHOOK_URL")
+        self.telegram_bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
+        self.telegram_chat_id = os.getenv("TELEGRAM_CHAT_ID")
         self._last_impersonate: str | None = None
 
         os.makedirs(self.game_folder, exist_ok=True)
@@ -54,66 +58,62 @@ class ScraperBase(ABC):
         """
         self.log(f"Mengambil data dari: [bold]{url}[/bold]")
 
-        try:
-            tried: set[str] = set()
-            max_attempts = len(IMPERSONATE_PROFILES)
+        tried: set[str] = set()
+        max_attempts = len(IMPERSONATE_PROFILES)
 
-            for _attempt in range(max_attempts):
-                available = [
-                    c
-                    for c in IMPERSONATE_PROFILES
-                    if c not in tried and c != self._last_impersonate
-                ]
-                if not available:
-                    available = [c for c in IMPERSONATE_PROFILES if c not in tried]
-                if not available:
-                    available = IMPERSONATE_PROFILES
+        for _attempt in range(max_attempts):
+            available = [
+                c for c in IMPERSONATE_PROFILES if c not in tried and c != self._last_impersonate
+            ]
+            if not available:
+                available = [c for c in IMPERSONATE_PROFILES if c not in tried]
+            if not available:
+                available = IMPERSONATE_PROFILES
 
-                opt_impersonate = random.choice(available)
-                tried.add(opt_impersonate)
-                self._last_impersonate = opt_impersonate
-                self.log(f"🔍 Menggunakan impersonate: [bold cyan]{opt_impersonate}[/bold cyan]")
+            opt_impersonate = random.choice(available)
+            tried.add(opt_impersonate)
+            self._last_impersonate = opt_impersonate
+            self.log(f"🔍 Menggunakan impersonate: [bold cyan]{opt_impersonate}[/bold cyan]")
 
-                try:
-                    response = requests.get(
-                        url, impersonate=opt_impersonate, timeout=REQUEST_TIMEOUT  # type: ignore[arg-type]
-                    )
-                except requests.exceptions.RequestException as e:
-                    self.log(
-                        f"❌ Error koneksi dengan impersonate {opt_impersonate}: {e}",
-                        style="bold red",
-                    )
-                    time.sleep(RETRY_DELAY_SHORT)
-                    continue
-
-                if response.status_code == 200:
-                    self.log(
-                        "✅ Koneksi berhasil (200 OK). Menunggu halaman termuat...",
-                        style="bold green",
-                    )
-
-                    time.sleep(PAGE_LOAD_WAIT)
-
-                    soup = BeautifulSoup(response.content, "html.parser")
-                    return soup
-
-                if response.status_code == 403:
-                    self.log(
-                        f"❌ Akses Ditolak (403) dengan impersonate {opt_impersonate}. "
-                        f"Mencoba impersonate lain...",
-                        style="yellow",
-                    )
-                    time.sleep(RETRY_DELAY_MEDIUM)
-                    continue
-
+            try:
+                response = requests.get(
+                    url,
+                    impersonate=opt_impersonate,  # type: ignore[arg-type]
+                    timeout=REQUEST_TIMEOUT,
+                )
+            except requests.exceptions.RequestException as e:
                 self.log(
-                    f"⚠️ Gagal memuat halaman. Status: {response.status_code}",
+                    f"❌ Error koneksi dengan impersonate {opt_impersonate}: {e}",
+                    style="bold red",
+                )
+                time.sleep(RETRY_DELAY_SHORT)
+                continue
+
+            if response.status_code == 200:
+                self.log(
+                    "✅ Koneksi berhasil (200 OK). Menunggu halaman termuat...",
+                    style="bold green",
+                )
+
+                time.sleep(PAGE_LOAD_WAIT)
+
+                soup = BeautifulSoup(response.content, "html.parser")
+                return soup
+
+            if response.status_code == 403:
+                self.log(
+                    f"❌ Akses Ditolak (403) dengan impersonate {opt_impersonate}. "
+                    f"Mencoba impersonate lain...",
                     style="yellow",
                 )
-                break
+                time.sleep(RETRY_DELAY_MEDIUM)
+                continue
 
-        except Exception as e:
-            self.log(f"❌ Error koneksi: {e}", style="bold red")
+            self.log(
+                f"⚠️ Gagal memuat halaman. Status: {response.status_code}",
+                style="yellow",
+            )
+            break
 
         return None
 
@@ -176,59 +176,31 @@ class ScraperBase(ABC):
                 )
                 continue
 
-            if key == "active":
-                try:
-                    if old_data:
-                        old_codes = {d.get("code") for d in old_data}
-                        new_codes = {d.get("code") for d in new_data}
-                        added = new_codes - old_codes
-                        for d in new_data:
-                            code_str = d.get("code")
-                            if not code_str or code_str not in added:
-                                continue
+            if key == "active" and old_data:
+                old_codes = {d.get("code") for d in old_data}
+                new_codes = {d.get("code") for d in new_data}
+                for code_str in new_codes - old_codes:
+                    code_dict = next((d for d in new_data if d.get("code") == code_str), None)
+                    if not code_dict:
+                        continue
+                    code_obj = Code.from_dict(code_dict)
+                    if not code_obj:
+                        continue
+                    try:
+                        self.send_new_code_webhook(code_obj)
+                    except requests.exceptions.RequestException as e:
+                        self.log(
+                            f"❌ Error saat memanggil webhook untuk {code_str}: {e}",
+                            style="bold red",
+                        )
 
-                            rewards_list = []
-                            for r in d.get("rewards", []) or []:
-                                try:
-                                    rewards_list.append(Reward(**r))
-                                except Exception as e:
-                                    self.log(
-                                        f"⚠️ Error parsing reward: {e}",
-                                        style="dim yellow",
-                                    )
-
-                            duration_dict = d.get("duration") or {}
-                            try:
-                                duration_obj = (
-                                    Duration(**duration_dict)
-                                    if isinstance(duration_dict, dict)
-                                    else Duration()
-                                )
-                            except Exception as e:
-                                self.log(f"⚠️ Error parsing duration: {e}", style="dim yellow")
-                                duration_obj = Duration()
-
-                            code_obj = Code(
-                                code=code_str,
-                                server=d.get("server", ""),
-                                status=d.get("status", ""),
-                                rewards=rewards_list,
-                                duration=duration_obj,
-                                link=d.get("link"),
-                            )
-
-                            try:
-                                self.send_new_code_webhook(code_obj)
-                            except requests.exceptions.RequestException as e:
-                                self.log(
-                                    f"❌ Error saat memanggil webhook untuk {code_str}: {e}",
-                                    style="bold red",
-                                )
-                except Exception as e:
-                    self.log(
-                        f"❌ Error saat memeriksa kode baru untuk webhook: {e}",
-                        style="bold red",
-                    )
+                    try:
+                        self.send_new_code_telegram(code_obj)
+                    except requests.exceptions.RequestException as e:
+                        self.log(
+                            f"❌ Error saat mengirim Telegram untuk {code_str}: {e}",
+                            style="bold red",
+                        )
 
             with open(json_path, "w", encoding="utf-8") as f:
                 json.dump(new_data, f, indent=4, ensure_ascii=False)
@@ -249,7 +221,7 @@ class ScraperBase(ABC):
 
         embed = {
             "author": {"name": self.game_name},
-            "title": f"{code.code}",
+            "title": code.code,
             "description": f"**Server:** {code.server}\n**Link:** {code.link}\n",
             "color": embed_color,
             "fields": [
@@ -290,6 +262,56 @@ class ScraperBase(ABC):
         except requests.exceptions.RequestException as e:
             self.log(f"❌ Error saat mengirim webhook: {e}", style="bold red")
 
+    def build_telegram_message(self, code: Code) -> str:
+        rewards = code.rewards or []
+        rewards_text = "\n".join(f"- {r.name}" for r in rewards) if rewards else "-"
+        parts = [
+            f"<b>{self.game_name}</b>",
+            "",
+            f"<code>{code.code}</code>",
+            "",
+            f"<b>Server:</b> {code.server}",
+            f"<b>Link:</b> {code.link or '-'}",
+            "",
+            f"<b>Rewards:</b>\n{rewards_text}",
+        ]
+        return "\n".join(parts)
+
+    def send_new_code_telegram(self, code: Code) -> None:
+        if not self.telegram_bot_token or not self.telegram_chat_id:
+            self.log(
+                "Tidak ada TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID; melewatkan pengiriman Telegram.",
+                style="dim yellow",
+            )
+            return
+
+        photo_url = GITHUB_ASSETS_URL_TEMPLATE.format(game_folder=self.game_folder)
+        caption = self.build_telegram_message(code)
+        if len(caption) > 1024:
+            caption = caption[:1021] + "..."
+
+        api_url = f"{TELEGRAM_API_BASE.format(token=self.telegram_bot_token)}/sendPhoto"
+        payload = {
+            "chat_id": self.telegram_chat_id,
+            "photo": photo_url,
+            "caption": caption,
+            "parse_mode": "HTML",
+        }
+
+        try:
+            resp = requests.post(api_url, json=payload, timeout=TELEGRAM_TIMEOUT)
+            if resp.status_code == 200:
+                self.log(
+                    f"\u2705 Telegram berhasil dikirim untuk kode {code.code}.", style="bold green"
+                )
+            else:
+                self.log(
+                    f"\u274c Gagal mengirim Telegram (status: {resp.status_code}): {resp.text}",
+                    style="bold red",
+                )
+        except requests.exceptions.RequestException as e:
+            self.log(f"\u274c Error saat mengirim Telegram: {e}", style="bold red")
+
     def _extract_rewards(self, cell: Any) -> list[Reward]:
         """Extract rewards from a fandom wiki table cell."""
         rewards = []
@@ -326,6 +348,61 @@ class ScraperBase(ABC):
     def _clean_code(self, code_text: str) -> str:
         """Clean and normalize a code string."""
         return re.sub(r"[^A-Z0-9]", "", code_text.upper())
+
+    def _parse_table(self, soup: BeautifulSoup | None, status: str) -> list[Code]:
+        """Parse a fandom wiki table into Code objects.
+
+        Works for the standard wikitable layout shared by Genshin, ZZZ, and similar pages.
+        """
+        codes: list[Code] = []
+        if not soup:
+            return codes
+
+        content: Tag | None = soup.find("div", class_="mw-parser-output")  # type: ignore[assignment]
+        if not content:
+            return codes
+
+        table: Tag | None = content.find("table", class_="wikitable")  # type: ignore[assignment]
+        if not table:
+            return codes
+
+        rows = table.find_all("tr")[1:]
+        for row in rows:
+            cols = row.find_all("td")
+            if len(cols) < 4:
+                continue
+
+            code_tags = cols[0].find_all("code")
+            if not code_tags:
+                continue
+
+            server = cols[1].get_text(strip=True)
+            rewards = self._extract_rewards(cols[2])
+
+            duration_cell = cols[3]
+            for mobile_elem in duration_cell.find_all(class_="mobile-only"):
+                mobile_elem.decompose()
+            duration_txt = duration_cell.get_text(separator=" ", strip=True)
+            duration = self._extract_duration(duration_txt)
+
+            for code_tag in code_tags:
+                code_txt = code_tag.get_text(strip=True)
+                code_clean = self._clean_code(code_txt)
+
+                if not code_clean:
+                    continue
+
+                codes.append(
+                    Code(
+                        code=code_clean,
+                        server=server,
+                        status=status,
+                        rewards=rewards,
+                        duration=duration,
+                    )
+                )
+
+        return codes
 
     @abstractmethod
     def scrape(self) -> None:

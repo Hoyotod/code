@@ -12,6 +12,7 @@ PAGE_LOAD_WAIT = 5
 RETRY_DELAY_SHORT = 1
 RETRY_DELAY_MEDIUM = 2
 WEBHOOK_TIMEOUT = 10
+TELEGRAM_TIMEOUT = 10
 
 COLOR_ACTIVE = 0x2ECC71
 COLOR_EXPIRED = 0x95A5A6
@@ -23,3 +24,4 @@ DISCORD_EMBED_FOOTER = "Hoyo Code"
 GITHUB_ASSETS_URL_TEMPLATE = (
     "https://raw.githubusercontent.com/Hoyotod/code/main/assets/{game_folder}.jpg"
 )
+TELEGRAM_API_BASE = "https://api.telegram.org/bot{token}"

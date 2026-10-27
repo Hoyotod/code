@@ -52,6 +52,26 @@ def test_normalize_code_data() -> None:
     assert normalized1 == normalized2
 
 
+def test_build_telegram_message() -> None:
+    from utils.constants import STATUS_ACTIVE
+    from utils.models import Code, Reward
+
+    scraper = MockScraper()
+
+    code = Code(
+        code="TEST123",
+        server="Global",
+        status=STATUS_ACTIVE,
+        rewards=[Reward(name="Primogem x100", image="http://example.com/gem.png")],
+        duration=Duration(),
+    )
+
+    message = scraper.build_telegram_message(code)
+    assert "TEST123" in message
+    assert "Global" in message
+    assert "Primogem x100" in message
+
+
 def test_build_webhook_payload() -> None:
     from utils.constants import COLOR_ACTIVE, STATUS_ACTIVE
     from utils.models import Code, Reward
