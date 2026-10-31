@@ -2,7 +2,7 @@
     {
         "code": "AHABLESSYOU",
         "server": "All",
-        "status": "active",
+        "status": "expired",
         "rewards": [
             {
                 "name": "Stellar Jade×100",
@@ -15,8 +15,8 @@
         ],
         "duration": {
             "discovered": "October 30, 2026",
-            "valid": "October 31, 2026",
-            "expired": null,
+            "valid": null,
+            "expired": "October 31, 2026",
             "notes": null
         },
         "link": null
@@ -24,7 +24,7 @@
     {
         "code": "NEVERGONNAMAKE",
         "server": "All",
-        "status": "active",
+        "status": "expired",
         "rewards": [
             {
                 "name": "Stellar Jade×100",
@@ -37,8 +37,8 @@
         ],
         "duration": {
             "discovered": "October 30, 2026",
-            "valid": "October 31, 2026",
-            "expired": null,
+            "valid": null,
+            "expired": "October 31, 2026",
             "notes": null
         },
         "link": null
@@ -46,7 +46,7 @@
     {
         "code": "NEVERGONNAGIVE",
         "server": "All",
-        "status": "active",
+        "status": "expired",
         "rewards": [
             {
                 "name": "Stellar Jade×100",
@@ -59,8 +59,8 @@
         ],
         "duration": {
             "discovered": "October 30, 2026",
-            "valid": "October 31, 2026",
-            "expired": null,
+            "valid": null,
+            "expired": "October 31, 2026",
             "notes": null
         },
         "link": null
