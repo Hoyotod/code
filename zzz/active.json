@@ -1,5 +1,49 @@
 [
     {
+        "code": "INKSHIFT33",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Polychrome×20",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4c/Item_Polychrome.png"
+            },
+            {
+                "name": "Denny×2,222",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Item_Denny.png"
+            }
+        ],
+        "duration": {
+            "discovered": "October 24, 2026",
+            "valid": "Unknown",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "LEVELUP33",
+        "server": "All",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Polychrome×20",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4c/Item_Polychrome.png"
+            },
+            {
+                "name": "Denny×2,222",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Item_Denny.png"
+            }
+        ],
+        "duration": {
+            "discovered": "October 24, 2026",
+            "valid": "Unknown",
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
         "code": "HOLLOWRUN33",
         "server": "All",
         "status": "active",
