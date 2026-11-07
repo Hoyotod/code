@@ -1,5 +1,99 @@
 [
     {
+        "code": "KEEPUPWITHMITYA",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Guide to Charity×3",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/7/79/Item_Guide_to_Charity.png"
+            },
+            {
+                "name": "\"Energy-Replenishing Meal\"×3",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/da/Item_Energy-Replenishing_Meal.png"
+            },
+            {
+                "name": "Kristallfold×3",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/6f/Item_Kristallfold.png"
+            }
+        ],
+        "duration": {
+            "discovered": "November 4, 2026",
+            "valid": null,
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "MIJIQ23V2437",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Mora×10,000",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/84/Item_Mora.png"
+            },
+            {
+                "name": "Adventurer's Experience×10",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/07/Item_Adventurer%27s_Experience.png"
+            },
+            {
+                "name": "Fine Enhancement Ore×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/23/Item_Fine_Enhancement_Ore.png"
+            },
+            {
+                "name": "Stir-Fried Fish Noodles×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/98/Item_Stir-Fried_Fish_Noodles.png"
+            },
+            {
+                "name": "Jueyun Chili Chicken×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/7/72/Item_Jueyun_Chili_Chicken.png"
+            }
+        ],
+        "duration": {
+            "discovered": "November 4, 2026",
+            "valid": null,
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "CDOF4X83H7X2",
+        "server": "America, Europe, Asia, TW/HK/Macao",
+        "status": "active",
+        "rewards": [
+            {
+                "name": "Mora×10,000",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/84/Item_Mora.png"
+            },
+            {
+                "name": "Adventurer's Experience×10",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/07/Item_Adventurer%27s_Experience.png"
+            },
+            {
+                "name": "Fine Enhancement Ore×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/23/Item_Fine_Enhancement_Ore.png"
+            },
+            {
+                "name": "Stir-Fried Fish Noodles×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/98/Item_Stir-Fried_Fish_Noodles.png"
+            },
+            {
+                "name": "Jueyun Chili Chicken×5",
+                "image": "https://static.wikia.nocookie.net/gensin-impact/images/7/72/Item_Jueyun_Chili_Chicken.png"
+            }
+        ],
+        "duration": {
+            "discovered": "November 4, 2026",
+            "valid": null,
+            "expired": null,
+            "notes": null
+        },
+        "link": null
+    },
+    {
         "code": "PJ2KEBRAYSRM",
         "server": "America, Europe, Asia, TW/HK/Macao",
         "status": "active",
