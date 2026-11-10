@@ -3,6 +3,7 @@ name = "code"
 version = "0.1.0"
 description = "Hoyo Code Scraper - Scrapes promotional codes for Hoyoverse games"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.13"
 dependencies = [
     "beautifulsoup4>=4.14.3",

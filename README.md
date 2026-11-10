@@ -129,5 +129,5 @@ uv run pre-commit run --all-files
 
 ## License
 
-See [LICENSE](LICENSE)
+MIT — see [LICENSE](LICENSE).
 
