@@ -1,5 +1,53 @@
 [
     {
+        "code": "SUNCHASER",
+        "server": "All",
+        "status": "expired",
+        "rewards": [
+            {
+                "name": "Polychrome×300",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4c/Item_Polychrome.png"
+            },
+            {
+                "name": "Senior Investigator Log×2",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/1c/Item_Senior_Investigator_Log.png"
+            },
+            {
+                "name": "W-Engine Energy Module×3",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/5/54/Item_W-Engine_Energy_Module.png"
+            },
+            {
+                "name": "Denny×30,000",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Item_Denny.png"
+            }
+        ],
+        "duration": {
+            "discovered": "November 20, 2026",
+            "valid": null,
+            "expired": "November 22, 2026",
+            "notes": null
+        },
+        "link": null
+    },
+    {
+        "code": "SUNBRINGER",
+        "server": "All",
+        "status": "expired",
+        "rewards": [
+            {
+                "name": "Polychrome×30",
+                "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/4c/Item_Polychrome.png"
+            }
+        ],
+        "duration": {
+            "discovered": "October 23, 2026",
+            "valid": null,
+            "expired": "October 29, 2026",
+            "notes": null
+        },
+        "link": null
+    },
+    {
         "code": "ZZZVOID32",
         "server": "All",
         "status": "expired",
