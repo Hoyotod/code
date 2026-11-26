@@ -41,8 +41,8 @@
         ],
         "duration": {
             "discovered": "November 15, 2026",
-            "valid": "November 26, 2026",
-            "expired": null,
+            "valid": null,
+            "expired": "November 26, 2026",
             "notes": null
         },
         "link": null
